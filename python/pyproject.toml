@@ -1,0 +1,37 @@
+[project]
+name = "projectname"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "matplotlib>=3.11.1",
+    "numpy>=2.0",
+    #"torch>=2.6",
+    #"torchvision>=0.21",   # must also be routed to the CPU index below
+]
+
+# Route torch (and any other PyTorch-ecosystem package) to the CPU-only wheel index.
+#[tool.uv.sources]
+#torch = [{ index = "pytorch-cpu" }]
+#torchvision = [{ index = "pytorch-cpu" }]
+
+#[[tool.uv.index]]
+#name = "pytorch-cpu"
+#url = "https://download.pytorch.org/whl/cpu"
+#explicit = true
+# explicit = true means this index is ONLY consulted for packages that name
+# it above, while else resolves from PyPI.
+
+[dependency-groups]
+dev = [                  # uv auto-installs the dev dependency group.
+    "ipython>=9.15.0",
+    "ipywidgets>=8.1.8",
+    "jupyterlab>=4.6.2",
+    "pytest>=8.0",
+    "tqdm>=4.69.1",
+]
+
+# No [build-system] table: uv treats this as a virtual project and will not
+# try to build or install the project itself into the venv. Add one (e.g.
+# hatchling) if you actually want an importable, installable package.
