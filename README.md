@@ -17,9 +17,10 @@ Recommended to use with `nix-direnv`.
 
 1. Get template in your working directory: `nix flake init -t github:alikhamze/nix_dev_templates#python`
 2. Create git repo: `git init`
-3. Commit template files after making initial changes.
+3. Stage template files after making initial changes to `flake.nix`.
 4. Create flake lock file: `nix flake update`
-5. Enable nix-direnv: `direnv allow`
+5. Enable nix-direnv: `direnv allow` to install/activate environment.
+6. (Python only) Now `uv` is installed, and python packages can be added with `uv add packagename` or `uv add --dev packagename`. This also creates a `uv.lock` file that can be committed.
 
 ## Cleaning up completed/legacy projects
 
@@ -39,4 +40,4 @@ nix-collect-garbage -d                     # garbage collect again now  that the
 
 (I originally wanted to keep this repo private, but I also don't want to login on every system I want to use these on.
 For that reason, and because I have learned a lot from others' nix repos, I'm making it public.
-Rather than reserving all rights, I'm putting an ethical license on it so others can learn from my templates and use them in positive ways.
+Rather than reserving all rights, I'm putting an ethical license on it so others can learn from my templates and use them in positive ways.)
