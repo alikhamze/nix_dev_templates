@@ -23,13 +23,28 @@ dependencies = [
 # explicit = true means this index is ONLY consulted for packages that name
 # it above, while else resolves from PyPI.
 
+[tool.ruff.lint]
+select = [
+    # pycodestyle
+    "E",
+    # Pyflakes
+    "F",
+    # pyupgrade
+    "UP",
+    # flake8-bugbear
+    "B",
+    # flake8-simplify
+    "SIM",
+    # isort
+    "I",
+]
+
 [dependency-groups]
 dev = [                  # uv auto-installs the dev dependency group.
     "ipython>=9.15.0",
     "ipywidgets>=8.1.8",
     "jupyterlab>=4.6.2",
     "pytest>=8.0",
-    "ruff>=0.16.0",
     "tqdm>=4.69.1",
 ]
 
