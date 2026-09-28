@@ -1,5 +1,6 @@
 .venv/
 .direnv/
+.env.local
 result
 result-*
 __pycache__/
